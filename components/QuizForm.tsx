@@ -1,14 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-
 import { socket } from '../lib/socket'
 
 export default function QuizForm() {
   const [name, setName] = useState('')
-
   const [guess, setGuess] = useState('')
-
   const [submitted, setSubmitted] =
     useState(false)
 
@@ -56,4 +53,25 @@ export default function QuizForm() {
             setName(e.target.value)
           }
           className="w-full rounded-full border border-gray-200 bg-[#F7F3EE] px-6 py-5 text-lg outline-none"
+        />
+
+        <input
+          type="number"
+          placeholder="Deine Schätzung"
+          value={guess}
+          onChange={(e) =>
+            setGuess(e.target.value)
+          }
+          className="w-full rounded-full border border-gray-200 bg-[#F7F3EE] px-6 py-5 text-lg outline-none"
+        />
+
+        <button
+          onClick={handleSubmit}
+          className="w-full rounded-full bg-black px-8 py-5 text-lg text-white transition hover:scale-105"
+        >
+          Antwort absenden
+        </button>
+      </div>
+    </div>
+  )
 }

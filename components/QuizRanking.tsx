@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-
 import { socket } from '../lib/socket'
 
 interface RankingItem {
@@ -62,4 +61,9 @@ export default function QuizRanking() {
                 daneben
               </p>
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
